@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>The hidden messageee</title>
+
+    <style>
+body {
+			background-color: #ffc0cb;
+			font-family: "Comic Sans MS", cursive, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 48px;
+			margin-top: 50px;
+		}
+
+		p {
+			font-size: 24px;
+			line-height: 1.5;
+			margin: 20px 0;
+		}
+
+		button {
+			background-color: #ff69b4;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			padding: 10px 20px;
+			font-size: 20px;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		button:hover {
+			background-color: #ff1493;
+		}
+    </style>
+
+</head>
+
+<body>
+
+    
+    
+<h2 align="center">The message is either cute or something i<br> did not want to say in the first place hehe</h2>
+
+    <button  align="right" onClick="Show()" class="button">Show the message!!</button>
+    <button " align="right" onClick="Hide()" class="button">Hide the message!!</button>
+    <a href="index.html"><button class="button">Go back to the main page!</button></a>
+
+    <h2 id="hidden" style="visibility: hidden;">
+        I just have to say one thing and its "jealous", thats it i just couldnt say it because its weird <br> to say something like that when im not actually with you </h2>
+ 
+        
+     <script>
+        function Show(params) { 
+            document.getElementById("hidden").style.visibility="visible"
+            
+        }
+        function Hide(params) { 
+            document.getElementById("hidden").style.visibility="hidden"
+            
+        }
+     </script>
+
+
+
+</body>
+
+
+
+
+</html>
