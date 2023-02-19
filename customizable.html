@@ -27,18 +27,6 @@
 			background-color: #ff1493;
 		}
     </style>
-
-<script>
-  function notifyUser() {
-    if ('Notification' in window) {
-      Notification.requestPermission().then(function (permission) {
-        if (permission === 'granted') {
-          var notification = new Notification('Hello the other person just made a custom message or just wants to spam yoouu!');
-        }
-      });
-    }
-  }
-</script>
   </head>
   <body>
     <h1 id="custom-text">No custom messages yet!</h1>
@@ -66,7 +54,30 @@
         localStorage.setItem("custom-text", customText);
       }
     </script>
-    <button onclick="notifyUser()">Notify the other personn!</button>
-	  <h1>This part does not work!</h1>
+    <script>
+      function sendNotification() {
+  var userId = getCookie('user_id');
+  if (userId) {
+    var notification = {
+      title: 'Helloo',
+      body: 'Someone changed the customizable text or just wants to spam you hehe',
+      icon: '/path/to/icon.png'
+    };
+    fetch('/send-notification.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: userId,
+        notification: notification
+      })
+    });
+  }
+}
+
+    </script>
+    <button onclick="sendNotification()">Notify the other personn!</button>
+
   </body>
 </html>
