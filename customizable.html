@@ -55,8 +55,10 @@
       }
     </script>
     <script>
+      document.cookie = "user_id=12345; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+
       function sendNotification() {
-  var userId = getCookie('user_id');
+  var userId = getCookie('12345');
   if (userId) {
     var notification = {
       title: 'Helloo',
